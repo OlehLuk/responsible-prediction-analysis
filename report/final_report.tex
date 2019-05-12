@@ -157,7 +157,7 @@ Roman \textsc{Moiseiev}\\[1cm] % Your name
     
     Solving this problem with modern methods can improve current classification results and consequently have a positive influence on many lives in Costa Rica. Moreover, common problems are appearing all the time in social, public and community services all around the globe, as resources are limited, and one should make sure that right people receive an appropriate amount of aid. So, the solution can be used in other cases.
     
-    As no cases of comparison of baseline and top performing models for the same Machine Learning task were found, Realated Work section is skipped. Details on tools and approaches applied can be found in Approach to solution section.
+    As no cases of comparison of baseline and top performing models for the same Machine Learning task were found, the Related Work section is skipped. Details on tools and approaches applied can be found in the Approach to solution section.
     
 \section{Approach to solution}
 % some text required here?
@@ -169,8 +169,8 @@ Roman \textsc{Moiseiev}\\[1cm] % Your name
     
 \section{Results}~~~
 
-    Baseline model is Random Forest, top performing one is XGBoost. Exact values of parameters can be found in the source code %[TBD]
-    . For the following experiments model with the parameters for baseline and best case were taken and trained on the subsample of the labeled data. Confusion matrix build for predictions for the remaining labeled data. Train part is 75\% of the labeled data. The following confusion matrix was received for the baseline model:
+    Baseline model is Random Forest, top performing one is XGBoost. Exact values of parameters can be found in the source code. %[TBD]
+    For the following experiments model with the parameters for baseline and best case were taken and trained on the subsample of the labelled data. Confusion matrix was built for predictions for the remaining labelled data. Train part is 75\% of the labelled data. The following confusion matrix was received for the baseline model:
     \begin{center}
         \includegraphics[width=\textwidth]{images/confusion_matrix_rf.png}
     \end{center}
@@ -286,10 +286,10 @@ Roman \textsc{Moiseiev}\\[1cm] % Your name
         \end{itemize}
         
 \section{Conclusions and Future work}~~~
-    Results of this work satisfied our research interests reflected in the aim of the project, as following insights were found:
+    All source code can be found at our GitHub repository \cite{our_github}. Results of this work satisfied our research interests reflected in the aim of the project, as following insights were found:
     \begin{enumerate}
         \item Fighting overfitting is very important when a model is expected to be used as a supportive tool in decision making. A simpler model can be more useful for such purpose.
-        \item Balancing classes in the training data is a must, not only for higher prediction quality, but for fairness and interpretability of results.
+        \item Balancing classes in the training data is a must, not only for higher prediction quality but for fairness and interpretability of results.
         \item Making decision based on such a big number of features is hard. The supportive tool can be very beneficial. 
         \item Expert based feature engineering and automated solutions for it can strongly help in solving real-life problems, even though for a supportive tool explainable features made by a human expert are much easier to utilize.
     \end{enumerate}

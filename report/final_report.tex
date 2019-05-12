@@ -254,20 +254,24 @@ Roman \textsc{Moiseiev}\\[1cm] % Your name
         \end{itemize}
 
     \subsubsection{Edge case stories}~~~
-	Using the insights from the SHAP analysis we have found numbers of observations within the margin of multiple classes prediction, such as the prediction tended to change due to a small change of data in the observations. Here we will review several particular examples of such cases.\\
-	\\
+    Using the insights from the SHAP analysis we have found numbers of observations within the margin of multiple classes prediction, such as the prediction tended to change due to a small change of data in the observations. Here we will review several particular examples of such cases.\\
+    \\
 \textbf{Case of household a18c0c0be - 3 years of age changes the class}\\
+\textit{(see python notebook "MG. Case study on several observations - a18c0c0be.ipynb" for details \cite{our_github})}\\
 
-Case of household a18c0c0be is interesting, because the top model predicts the class of the household as Moderate poor, although the true class is Non-Vulnerable. But to change the prediction to the correct class (Non-Vulnerable), its enough just to increase age for 1 person (\verb|ID_9f5bc6763|) from 15 years to 18 years and thus decrease depencency feature value.\\        
-	\\
+Case of household a18c0c0be is interesting, because the top model predicts the class of the household as Moderate poor, although the true class is Non-Vulnerable. But to change the prediction to the correct class (Non-Vulnerable), its enough just to increase the age for 1 person (\verb|ID_9f5bc6763|) from 15 years to 18 years and thus decrease dependency feature value.\\        
+    \\
 \textbf{Case of household 75f505df4 - 1 year of schooling changes the class}\\
+\textit{(see python notebook "MG. Case study on several observations - 75f505df4.ipynb" for details \cite{our_github})}\\
 
-Case of household 75f505df4 is interesting, because the top model predicts the class of the household as Moderate poor, although the true class is Non-Vulnerable. But to change the prediction to the better class (Vulnerable), its enough just to increase years of schooling for 1 person (\verb|ID_9f5bc6763|) from 6 years to 7 years.\\
+Case of household 75f505df4 is interesting, because the top model predicts the class of the household as Moderate poor, although the true class is Non-Vulnerable. But to change the prediction to the better class (Vulnerable), it is enough just to increase years of schooling for 1 person (\verb|ID_9f5bc6763|) from 6 years to 7 years.\\
 \\
 \textbf{Case of household 2d0cf211d - taking away 1 cellphone changes the class}\\
+\textit{(see python notebook "MG. Case study on several observations - 2d0cf211d.ipynb" for details\cite{our_github})}\\
 
-Case of household 2d0cf211d is interesting, because the top model predicts the class of the household as Non-Vulnerable, although the true class is Moderate poor. But to change the prediction to the correct class (Moderate poor), its enough just to decrease number of cellphones by 1.\\
+Case of household 2d0cf211d is interesting, because the top model predicts the class of the household as Non-Vulnerable, although the true class is Moderate poor. But to change the prediction to the correct class (Moderate poor), it is enough just to decrease the number of cellphones by 1.\\
 
+The possible conclusion from the above examples is that it is very important for the end user not only to see the plain prediction of the poverty level of the household but also more information on the prediction: the probabilities of each poverty level class, the contribution of the features, the possibility to change class prediction by making some small insignificant changes in the data. The information should give the end user ability to make more conscience decisions on the case of the household poverty level prediction.
 
     \subsection{Non-vulnerable vs Vulnerable}
     \subsubsection{Baseline Model}~~~

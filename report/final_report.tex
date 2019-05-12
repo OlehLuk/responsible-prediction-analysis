@@ -166,6 +166,10 @@ Roman \textsc{Moiseiev}\\[1cm] % Your name
     
 \subsection{SHAP}~~~
     To investigate results of model development and application one can investigate feature importance; influence of particular feature values and their combinations on prediction for a particular data point; changes in model behaviour and prediction caused by changes in the data consumed. As topic of model interpretability and fairness is in the spotlight last years, several efficient tools were created for these purposes. However, SHAP \cite{NIPS2017_7062} library was utilized in this work as this new tool has become a swiss knife for machine learning model analysis from the point of view of responsible development.
+
+    The SHAP library is the python implementation of the Shapley Values - method of the coalition game theory, designed by Shapley (1953). The aim of the method is to distribute payouts to the players accordingly to their contribution to the payout in total. In the ML context, the method estimates the contribution of each feature to the final prediction by observing the changes in the prediction while variating the values of the feature under examination.
+
+    The SHAP library helps us to interpret the model predictions and by finding out how much and what features are contributing to each separate prediction, we can learn important insights on the data. On example, this may help to investigate the misclassified observations to find out what went wrong and how this could be fixed.
     
 \section{Results}~~~
 
@@ -259,19 +263,19 @@ Roman \textsc{Moiseiev}\\[1cm] % Your name
 \textbf{Case of household a18c0c0be - 3 years of age changes the class}\\
 \textit{(see python notebook "MG. Case study on several observations - a18c0c0be.ipynb" for details \cite{our_github})}\\
 
-Case of household a18c0c0be is interesting, because the top model predicts the class of the household as Moderate poor, although the true class is Non-Vulnerable. But to change the prediction to the correct class (Non-Vulnerable), its enough just to increase the age for 1 person (\verb|ID_9f5bc6763|) from 15 years to 18 years and thus decrease dependency feature value.\\        
+    Case of household a18c0c0be is interesting, because the top model predicts the class of the household as Moderate poor, although the true class is Non-Vulnerable. But to change the prediction to the correct class (Non-Vulnerable), its enough just to increase the age for 1 person (\verb|ID_9f5bc6763|) from 15 years to 18 years and thus decrease dependency feature value.\\        
     \\
 \textbf{Case of household 75f505df4 - 1 year of schooling changes the class}\\
 \textit{(see python notebook "MG. Case study on several observations - 75f505df4.ipynb" for details \cite{our_github})}\\
 
-Case of household 75f505df4 is interesting, because the top model predicts the class of the household as Moderate poor, although the true class is Non-Vulnerable. But to change the prediction to the better class (Vulnerable), it is enough just to increase years of schooling for 1 person (\verb|ID_9f5bc6763|) from 6 years to 7 years.\\
+    Case of household 75f505df4 is interesting, because the top model predicts the class of the household as Moderate poor, although the true class is Non-Vulnerable. But to change the prediction to the better class (Vulnerable), it is enough just to increase years of schooling for 1 person (\verb|ID_9f5bc6763|) from 6 years to 7 years.\\
 \\
 \textbf{Case of household 2d0cf211d - taking away 1 cellphone changes the class}\\
 \textit{(see python notebook "MG. Case study on several observations - 2d0cf211d.ipynb" for details\cite{our_github})}\\
 
-Case of household 2d0cf211d is interesting, because the top model predicts the class of the household as Non-Vulnerable, although the true class is Moderate poor. But to change the prediction to the correct class (Moderate poor), it is enough just to decrease the number of cellphones by 1.\\
+    Case of household 2d0cf211d is interesting, because the top model predicts the class of the household as Non-Vulnerable, although the true class is Moderate poor. But to change the prediction to the correct class (Moderate poor), it is enough just to decrease the number of cellphones by 1.\\
 
-The possible conclusion from the above examples is that it is very important for the end user not only to see the plain prediction of the poverty level of the household but also more information on the prediction: the probabilities of each poverty level class, the contribution of the features, the possibility to change class prediction by making some small insignificant changes in the data. The information should give the end user ability to make more conscience decisions on the case of the household poverty level prediction.
+    The possible conclusion from the above examples is that it is very important for the end user not only to see the plain prediction of the poverty level of the household but also more information on the prediction: the probabilities of each poverty level class, the contribution of the features, the possibility to change class prediction by making some small insignificant changes in the data. The information should give the end user ability to make more conscience decisions on the case of the household poverty level prediction.
 
     \subsection{Non-vulnerable vs Vulnerable}
     \subsubsection{Baseline Model}~~~
